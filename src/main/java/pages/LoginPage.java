@@ -2,35 +2,55 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 	
 	private WebDriver driver;
 	
-	private By usernameTextBox =By.id("Email");
+	@FindBy(id="Email")
+	WebElement usernameTextBox;
 	
-	private By passwordTextBox =By.id("Password");
+	@FindBy(id="Password")
+	WebElement passwordTextBox;
 	
-	private By submit =By.xpath("//button[@type='submit']");
+	@FindBy(xpath="//button[@type='submit']")
+	WebElement submit;
+	
+	//private By usernameTextBox =By.id("Email");
+	
+	//private By passwordTextBox =By.id("Password");
+	
+	//private By submit =By.xpath("//button[@type='submit']");
 	
 	public LoginPage(WebDriver driver) {
 		
 		this.driver= driver;
+		PageFactory.initElements(driver, this);
+		        
 	}
 	
 	public void enterusername(String username) {
-		driver.findElement(usernameTextBox).clear();
-		driver.findElement(usernameTextBox).sendKeys(username);
+		
+		usernameTextBox.clear();
+		usernameTextBox.sendKeys(username);
+		//driver.findElement(usernameTextBox).clear();
+		//driver.findElement(usernameTextBox).sendKeys(username);
 		
 	}
 	
 	public void enterpassword(String password) {
-		driver.findElement(passwordTextBox).sendKeys(password);
+		
+		passwordTextBox.sendKeys(password);
+		//driver.findElement(passwordTextBox).sendKeys(password);
 		
 	}
 	
 	public void submit() {
-		driver.findElement(submit).click();
+		submit.click();
+		//driver.findElement(submit).click();
 		
 	}
 	
