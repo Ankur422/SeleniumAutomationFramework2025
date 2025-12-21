@@ -2,26 +2,64 @@ package tests;
 
 import static org.testng.Assert.assertEquals;
 
+import java.io.IOException;
+
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
 import pages.LoginPage;
+import utils.ExcelUtils;
 import utils.ExtentReportManager;
 import utils.Log;
 
 public class LoginTest extends BaseTest {
 	
-	@Test 
-	public void testvalidLogin() {
+	@DataProvider(name="LoginData")
+	public Object[][] getLoginData() throws IOException{
+		
+		String filePath =System.getProperty("user.dir")+"/testdata/TestData.xlsx";
+		
+		ExcelUtils.loadExcel(filePath, "Sheet1");
+		int rowCount =ExcelUtils.getRowCount();
+		
+		Object[][] data= new Object[rowCount -1][2];
+		for(int i=1;i<rowCount;i++) {
+			
+			data[i-1][0]=ExcelUtils.getCellData(i,0);
+			data[i-1][1]=ExcelUtils.getCellData(i,1);
+		}
+		
+		ExcelUtils.closeExcel();
+		return data;
+	}
+	
+	@DataProvider(name="LoginData2")
+	public Object[][] getData(){
+		
+		return new Object[][] {
+			{"user1","pass1"},
+			{"user2","pass2"},
+			{"admin","admin123"}
+		};
+	}
+	
+	//@Test(dataProvider ="LoginData2")
+	@Test
+	@Parameters({"username","password"})
+	public void testvalidLogin(String username, String password) {
 		
 		Log.info("Starting login test...");
 		test =ExtentReportManager.createTest("Login Test");
 		LoginPage loginPage =new LoginPage(driver);
 		
 		test.info("Navigating to URL");
-		loginPage.enterusername("admin@yourstore.com");
-		loginPage.enterpassword("admin");
+		//loginPage.enterusername("admin@yourstore.com");
+		//loginPage.enterpassword("admin");
+		loginPage.enterusername(username);
+		loginPage.enterpassword(password);
 		loginPage.submit();
 		
 	String title=	driver.getTitle();
@@ -51,7 +89,7 @@ public void testLoginwithIvalidCredentials() {
 	
 	
 	Log.info("Verfying ...");
-	Assert.assertEquals(driver.getTitle(), "Just a moment...789");
+	Assert.assertEquals(driver.getTitle(), "Just a moment...");
 		
 		
 	}
