@@ -50,7 +50,7 @@ public class LoginTest extends BaseTest {
 	//@Test(dataProvider ="LoginData2")
 	@Test
 	@Parameters({"username","password"})
-	public void testvalidLogin(@Optional("defaultUser") String username, String password) {
+	public void testvalidLogin(@Optional("defaultUser") String username, @Optional("defaultUser") String password) {
 		
 		Log.info("Starting login test...");
 		test =ExtentReportManager.createTest("Login Test");
