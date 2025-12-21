@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-LoginSuite" class="navigator-link">
-              <span class="suite-name border-failed">LoginSuite</span>
+              <span class="suite-name border-passed">LoginSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,21 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-LoginSuite" class="hide-methods failed suite-LoginSuite"> (hide)</a> <!-- hide-methods failed suite-LoginSuite -->
-                      <a href="#" panel-name="suite-LoginSuite" class="show-methods failed suite-LoginSuite"> (show)</a> <!-- show-methods failed suite-LoginSuite -->
-                    </span>
-                    <div class="method-list-content failed suite-LoginSuite">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-LoginSuite" title="tests.LoginTest" class="method navigator-link" hash-for-method="testvalidLogin(Username1, Pass1)">testvalidLogin(Username1, Pass1)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-LoginSuite -->
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -118,6 +104,11 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-LoginSuite" title="tests.LoginTest" class="method navigator-link" hash-for-method="testLoginwithIvalidCredentials">testLoginwithIvalidCredentials</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LoginSuite" title="tests.LoginTest" class="method navigator-link" hash-for-method="testvalidLogin(Username1, Pass1)">testvalidLogin(Username1, Pass1)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-LoginSuite -->
@@ -132,27 +123,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-LoginSuite" class="panel LoginSuite">
-          <div class="suite-LoginSuite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">tests.LoginTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testvalidLogin(Username1, Pass1)">
-                  </a> <!-- testvalidLogin(Username1, Pass1) -->
-                  <span class="method-name">testvalidLogin</span>
-                  <span class="parameters">(Username1,Pass1)</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [Just a moment...] but found [nopCommerce demo store. Login]
-	at tests.LoginTest.testvalidLogin(LoginTest.java:70)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 31 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-LoginSuite-class-failed -->
           <div class="suite-LoginSuite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -164,6 +134,14 @@
                   <a name="testLoginwithIvalidCredentials">
                   </a> <!-- testLoginwithIvalidCredentials -->
                   <span class="method-name">testLoginwithIvalidCredentials</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testvalidLogin(Username1, Pass1)">
+                  </a> <!-- testvalidLogin(Username1, Pass1) -->
+                  <span class="method-name">testvalidLogin</span>
+                  <span class="parameters">(Username1,Pass1)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -226,16 +204,16 @@ data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testLoginwithIvalidCredentials')
 data.setCell(0, 2, 'tests.LoginTest')
-data.setCell(0, 3, 2296);
+data.setCell(0, 3, 1756);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'testvalidLogin')
 data.setCell(1, 2, 'tests.LoginTest')
-data.setCell(1, 3, 1047);
+data.setCell(1, 3, 1037);
 window.suiteTableData['LoginSuite']= { tableData: data, tableDiv: 'times-div-LoginSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 seconds</span>
+              <span class="suite-total-time">Total running time: 2 seconds</span>
               <div id="times-div-LoginSuite">
               </div> <!-- times-div-LoginSuite -->
             </div> <!-- times-div -->
@@ -268,33 +246,31 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">597 ms</span>
+                <span class="method-start">526 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testLoginwithIvalidCredentials</span>
-                <span class="method-start">4682 ms</span>
+                <span class="method-start">4934 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testLoginwithIvalidCredentials status=SUCCESS method=LoginTest.testLoginwithIvalidC...)</span>
-                <span class="method-start">6985 ms</span>
+                <span class="method-start">6696 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">7257 ms</span>
+                <span class="method-start">7048 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">testvalidLogin(Username1, Pass1)</span>
-                <span class="method-start">9431 ms</span>
+                <span class="method-start">9460 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=testvalidLogin status=FAILURE method=LoginTest.testvalidLogin(java.lang.String,java...)</span>
-                <span class="method-start">10486 ms</span>
+                <span class="method-name">tearDown([TestResult name=testvalidLogin status=SUCCESS method=LoginTest.testvalidLogin(java.lang.String,java...)</span>
+                <span class="method-start">10501 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">teardonReport</span>
-                <span class="method-start">10969 ms</span>
+                <span class="method-start">10787 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

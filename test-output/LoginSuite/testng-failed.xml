@@ -11,6 +11,7 @@
           <include name="teardonReport"/>
           <include name="tearDown"/>
           <include name="testvalidLogin" invocation-numbers="0"/>
+          <include name="testLoginwithIvalidCredentials"/>
           <include name="setupreport"/>
         </methods>
       </class> <!-- tests.LoginTest -->
