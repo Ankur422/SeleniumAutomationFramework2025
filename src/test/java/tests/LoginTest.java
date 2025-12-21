@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -49,7 +50,7 @@ public class LoginTest extends BaseTest {
 	//@Test(dataProvider ="LoginData2")
 	@Test
 	@Parameters({"username","password"})
-	public void testvalidLogin(String username, String password) {
+	public void testvalidLogin(@Optional("defaultUser") String username, String password) {
 		
 		Log.info("Starting login test...");
 		test =ExtentReportManager.createTest("Login Test");
